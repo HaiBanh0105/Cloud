@@ -1,0 +1,405 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffd9dc",
+              "outline-variant": "#c3c8c1",
+              "on-tertiary-fixed": "#2d1417",
+              "tertiary-fixed-dim": "#e7bcbf",
+              tertiary: "#271013",
+              "secondary-fixed": "#dce5db",
+              "on-secondary-container": "#5c655d",
+              "on-primary-fixed-variant": "#364c3c",
+              surface: "#f9f9f8",
+              "on-primary-fixed": "#0b2013",
+              "inverse-surface": "#2e3131",
+              primary: "#061b0e",
+              secondary: "#586159",
+              "surface-variant": "#e1e3e2",
+              "on-primary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "primary-container": "#1b3022",
+              background: "#f9f9f8",
+              outline: "#737973",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#3f2427",
+              "surface-dim": "#d9dad9",
+              "on-primary-container": "#819986",
+              "surface-container-high": "#e7e8e7",
+              "surface-container-highest": "#e1e3e2",
+              "secondary-fixed-dim": "#c0c9bf",
+              "surface-container-low": "#f3f4f3",
+              "on-secondary-fixed": "#151d17",
+              "primary-fixed-dim": "#b4cdb8",
+              "on-surface-variant": "#434843",
+              error: "#ba1a1a",
+              "inverse-on-surface": "#f0f1f0",
+              "secondary-container": "#d9e2d8",
+              "on-tertiary-container": "#b0898c",
+              "on-background": "#191c1c",
+              "inverse-primary": "#b4cdb8",
+              "on-error": "#ffffff",
+              "on-secondary-fixed-variant": "#404941",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-fixed-variant": "#5d3f42",
+              "surface-tint": "#4d6453",
+              "surface-bright": "#f9f9f8",
+              "on-surface": "#191c1c",
+              "primary-fixed": "#d0e9d4",
+              "surface-container": "#edeeed",
+              "on-error-container": "#93000a",
+              "error-container": "#ffdad6",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            fontFamily: {
+              headline: ["Newsreader"],
+              body: ["Manrope"],
+              label: ["Manrope"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .reading-progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 2px;
+        width: 35%;
+        background-color: #061b0e;
+        z-index: 100;
+      }
+      .ghost-border {
+        outline: 1px solid rgba(195, 200, 193, 0.15);
+      }
+      .editorial-gradient {
+        background: linear-gradient(135deg, #061b0e 0%, #1b3022 100%);
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <div class="reading-progress-bar"></div>
+    <nav
+      class="fixed top-0 w-full z-50 bg-[#f9f9f8]/80 dark:bg-[#061b0e]/80 backdrop-blur-xl transition-colors duration-300"
+    >
+      <div
+        class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6 w-full"
+      >
+        <a
+          class="font-['Newsreader'] text-2xl font-bold tracking-tighter text-[#061b0e] dark:text-[#f9f9f8]"
+          href="../index.html"
+        >
+          The Quiet Editorial
+        </a>
+        <div
+          class="hidden md:flex items-center gap-10 font-['Newsreader'] text-lg tracking-tight"
+        >
+          <a
+            class="text-[#061b0e] dark:text-[#f9f9f8] border-b-2 border-[#061b0e] dark:border-[#f9f9f8] pb-1 hover:text-[#061b0e] dark:hover:text-[#ffffff] transition-colors duration-300"
+            href="#"
+            >Journal</a
+          >
+          <a
+            class="text-[#586159] dark:text-[#e1e3e2] hover:text-[#061b0e] dark:hover:text-[#ffffff] transition-colors duration-300"
+            href="#"
+            >Essays</a
+          >
+          <a
+            class="text-[#586159] dark:text-[#e1e3e2] hover:text-[#061b0e] dark:hover:text-[#ffffff] transition-colors duration-300"
+            href="#"
+            >Archive</a
+          >
+          <a
+            class="text-[#586159] dark:text-[#e1e3e2] hover:text-[#061b0e] dark:hover:text-[#ffffff] transition-colors duration-300"
+            href="#"
+            >About</a
+          >
+        </div>
+        <div class="flex items-center gap-4">
+          <button
+            class="material-symbols-outlined text-primary"
+            data-icon="search"
+          >
+            search
+          </button>
+          <button
+            class="material-symbols-outlined text-primary"
+            data-icon="menu"
+          >
+            menu
+          </button>
+        </div>
+      </div>
+    </nav>
+    <main class="pt-32 pb-24">
+      <article class="max-w-7xl mx-auto px-8">
+        <header class="mb-20 text-center md:text-left">
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between gap-8"
+          >
+            <div class="max-w-3xl">
+              <span
+                class="font-label text-sm tracking-widest uppercase text-secondary mb-4 block"
+                >Sustainability &amp; Craft</span
+              >
+              <h1
+                class="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.95] text-on-surface"
+              >
+                The Beauty of <br /><span class="italic">Sustainable</span>
+                Wardrobes
+              </h1>
+            </div>
+            <div
+              class="md:pb-4 text-secondary font-label text-sm tracking-widest uppercase"
+            >
+              Published 12 October 2024
+            </div>
+          </div>
+        </header>
+        <section class="mb-24 relative">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-8 overflow-hidden rounded-xl">
+              <img
+                alt="Minimalist clothing rack"
+                class="w-full aspect-[4/5] object-cover"
+                data-alt="high-fashion minimalist photography of a curated clothing rack with linen and wool garments in neutral tones against white wall"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzc_MMaR6vWfU5LjMnfaa9etUnw6EorLOMLhNOmH3RKfbGBoH1o91NlaWJywk8Tm3HrVsYlD_tjrfg9hsvNxdbEGJX3BM611UuAIzRDolxg_9de4M2ITDr5V2FMGACGnGz1MWeJlCrX7REshnNW0Cp7m158omq_7UEmw1mf2y58aTRV0qgyHb9oRbanGXcSDiwTJCfNydNOX9zzoAT8MKKanprVAeAaYBrUpRj-OykMjBlgqYsYKtAqaLoyhU6ChneF0MN-CW1Bx37"
+              />
+            </div>
+            <div class="md:col-span-4 space-y-8">
+              <div class="bg-surface-container-low p-10 rounded-xl">
+                <p
+                  class="font-headline text-2xl italic leading-relaxed text-primary"
+                >
+                  "The most sustainable garment is the one already in your
+                  closet, followed closely by the one crafted to last a
+                  lifetime."
+                </p>
+              </div>
+              <p class="font-body text-lg leading-relaxed text-secondary px-4">
+                In an era of fleeting trends and digital noise, the quiet return
+                to intentional craftsmanship offers a sanctuary for the modern
+                individual.
+              </p>
+            </div>
+          </div>
+        </section>
+        <div class="max-w-3xl mx-auto">
+          <section class="mb-20 space-y-8">
+            <h2 class="font-headline text-3xl font-bold text-on-surface">
+              The Philosophy of the Capsule
+            </h2>
+            <p
+              class="font-body text-xl leading-relaxed text-on-surface-variant"
+            >
+              A sustainable wardrobe isn't merely about the labels we choose,
+              but the relationship we cultivate with our possessions. It is the
+              transition from consuming to curating. The capsule wardrobe, once
+              a niche minimalist concept, has evolved into a high-fashion
+              standard for those who value quality over quantity.
+            </p>
+            <p
+              class="font-body text-xl leading-relaxed text-on-surface-variant"
+            >
+              The core of this philosophy lies in versatility. Each piece is
+              selected for its ability to harmonize with others, creating an
+              ecosystem of aesthetic choices that simplifies the morning ritual
+              while elevating daily presence.
+            </p>
+          </section>
+        </div>
+        <section class="mb-24">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="md:col-span-2 overflow-hidden rounded-xl">
+              <img
+                class="w-full aspect-square object-cover"
+                data-alt="Close up detail of high quality organic cotton texture and neat stitching on a minimalist beige garment"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdYXNR5wDqo-BXopSnlIWc5xACNkbzw0I5VXIs1DkNbUR8ZZyyW8IbD-1va3oIDh4bjpyWScnwjuvuU3l9FjZN3SbRK6BnnhWO28Am_HrasRCYOrfcMSFX1X45s-SpM_OCPVqhBPy3d25ExozIjGJhXEyECeMZMm4E7w736FFE8wkhTnd_XMrWk8e2Gx_BqxFDGsR2M80gQN-wegYdTFl8Ix3H-KGJVkL-tdvzytdIHnzEqX0ACxReaubUMXPihLpMvIWm2QATUXbE"
+              />
+            </div>
+            <div class="overflow-hidden rounded-xl">
+              <img
+                class="w-full aspect-[3/4] object-cover mt-8"
+                data-alt="Monochrome editorial shot of a silk slip dress hanging gracefully in a sunlit architectural space with long shadows"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-l-QjhGWyYhYFxy66129CqYEv-grQxEbGiemxoPS3Shnq6e6qcWgrO8KMsk-y76sa4A4aPX3ITf7I30FYOsyD6o_-hUgr6WHeU0cKKH269BfVkgPmis2IM7CLtykR4V93mLKIMbxol6VZzyJA_ZgE0r5LFhQPZWYqNTxknpZzoZtUBzD2Q1DPXD-soSb62tn0XHEru3N4GerAOscd48RPEfrKAuCzZvTbWQLe4H4HLb64Syzc6BArmyuj9HRAoELAzBgzttm-fb07"
+              />
+            </div>
+            <div class="overflow-hidden rounded-xl">
+              <img
+                class="w-full aspect-[3/4] object-cover"
+                data-alt="Stacked neatly folded sweaters in ivory, camel, and charcoal colors showing soft luxury knit textures"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFAHrqg3tp3r9THN7jAWvfyI7Zag-II-PTv8uwqJ7gSb_3aiYPXdv8UUWXm9GH2vqR4Hme-1VdxX4Ho07o6vMXLaY18kFqFfcjArySRDrawhkG5sk5Mx25pZmaM5rAKwGhC8t-8r3GK3KzuCl-XVJ61OAh5yoarinSHqz3Zed84p_Zi2GNMAMnL1YsBZ3iiefP_A2XLgg3-N_iAFfdrq9QO1Cy264uTZvAV6tkYdU2sDEiwxoQ0eCpdDl4lYzFLJtLiCc_QVEzkqLW"
+              />
+            </div>
+          </div>
+        </section>
+        <div class="max-w-3xl mx-auto">
+          <section class="mb-20 space-y-8">
+            <h2 class="font-headline text-3xl font-bold text-on-surface">
+              Materiality and Ethics
+            </h2>
+            <p
+              class="font-body text-xl leading-relaxed text-on-surface-variant"
+            >
+              Ethical fashion begins with the fiber. Organic linens, recycled
+              cashmeres, and Tencel offer not just a lower environmental
+              footprint, but a superior tactile experience. These materials
+              breathe, age with grace, and possess a depth of texture that
+              synthetic alternatives simply cannot replicate.
+            </p>
+            <div
+              class="border-l-4 border-primary pl-8 py-4 my-12 bg-surface-container-low rounded-r-xl"
+            >
+              <h4
+                class="font-label text-xs tracking-widest uppercase text-secondary mb-2"
+              >
+                The Checklist
+              </h4>
+              <ul class="font-headline text-xl italic space-y-4 text-primary">
+                <li>Traceability from source to stitch.</li>
+                <li>Commitment to living wages for artisans.</li>
+                <li>Low-impact dye processes.</li>
+                <li>Design longevity beyond seasons.</li>
+              </ul>
+            </div>
+            <p
+              class="font-body text-xl leading-relaxed text-on-surface-variant"
+            >
+              By choosing brands that prioritize transparent supply chains, we
+              participate in a global movement toward dignity and restoration.
+              Every purchase is a vote for the kind of world we wish to inhabit.
+            </p>
+          </section>
+        </div>
+        <section class="mb-24">
+          <div
+            class="bg-primary text-on-primary rounded-xl overflow-hidden relative"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-2">
+              <div class="p-12 md:p-20 flex flex-col justify-center">
+                <span
+                  class="font-label text-sm tracking-widest uppercase text-on-primary-container mb-6 block"
+                  >Join the movement</span
+                >
+                <h2
+                  class="font-headline text-4xl md:text-5xl font-bold tracking-tight mb-8"
+                >
+                  Crafting Your Personal Aesthetic
+                </h2>
+                <p
+                  class="font-body text-lg text-on-primary/80 mb-10 leading-relaxed"
+                >
+                  Subscribe to our weekly editorial for deep dives into
+                  sustainable craftsmanship and minimalist living.
+                </p>
+                <form class="flex flex-col gap-4">
+                  <input
+                    class="bg-primary-container border-none text-on-primary placeholder:text-on-primary-container p-4 rounded-lg ghost-border focus:ring-1 focus:ring-on-primary transition-all"
+                    placeholder="Your email address"
+                    type="email"
+                  />
+                  <button
+                    class="editorial-gradient text-on-primary font-label text-sm tracking-widest uppercase py-4 rounded-lg hover:opacity-90 transition-opacity"
+                    type="submit"
+                  >
+                    Join The Journal
+                  </button>
+                </form>
+              </div>
+              <div class="hidden md:block">
+                <img
+                  class="w-full h-full object-cover opacity-60"
+                  data-alt="Cinematic fashion shot of high-end wool coat detail with soft depth of field and elegant lighting"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXbqyBbMhE9UIJjay5ExE8iKX2IENXkegKVXKpnFgvsTgZpyUAbQBQ2oHdYOOxXPze5pWxOE657hFlpQoKNicG2ZnzN-VeOZqPPTcT9q-Lz7-CPjtvs3YhhC5jzgBiefH1w53sUZ7bXbUSO--jonhlsYSb_sHIA0WvEQtUAURmTdFd-YWFKMCEsS3pu4Vsi1O-YCFVZPAYdjnhv9coHnXNUAD8eXz1-gdK5LXkR_yEDMULxECBGP6E6vvvg05DBuSWuNjmXUAtSfnM"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer class="mt-32 pt-16 border-t border-outline-variant/15">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center gap-8 w-full"
+          >
+            <div
+              class="font-['Newsreader'] italic text-xl text-[#061b0e] dark:text-[#f9f9f8]"
+            >
+              The Quiet Editorial.
+            </div>
+            <div
+              class="flex gap-8 font-['Manrope'] text-sm tracking-widest uppercase"
+            >
+              <a
+                class="text-[#586159] hover:text-[#061b0e] underline underline-offset-4"
+                href="#"
+                >Privacy</a
+              >
+              <a
+                class="text-[#586159] hover:text-[#061b0e] underline underline-offset-4"
+                href="#"
+                >Terms</a
+              >
+              <a
+                class="text-[#586159] hover:text-[#061b0e] underline underline-offset-4"
+                href="#"
+                >Newsletter</a
+              >
+              <a
+                class="text-[#586159] hover:text-[#061b0e] underline underline-offset-4"
+                href="#"
+                >Contact</a
+              >
+            </div>
+            <div
+              class="font-['Manrope'] text-xs tracking-widest uppercase text-secondary"
+            >
+              © 2024 The Quiet Editorial. Intentional Space.
+            </div>
+          </div>
+        </footer>
+      </article>
+    </main>
+    <div class="fixed bottom-8 right-8 z-40">
+      <button
+        class="bg-primary text-on-primary p-4 rounded-full shadow-xl hover:scale-105 transition-transform flex items-center justify-center"
+      >
+        <span class="material-symbols-outlined" data-icon="share">share</span>
+      </button>
+    </div>
+  </body>
+</html>

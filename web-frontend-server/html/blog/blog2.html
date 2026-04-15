@@ -1,0 +1,408 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Decluttering Your Mind | The Quiet Editorial</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffd9dc",
+              "outline-variant": "#c3c8c1",
+              "on-tertiary-fixed": "#2d1417",
+              "tertiary-fixed-dim": "#e7bcbf",
+              tertiary: "#271013",
+              "secondary-fixed": "#dce5db",
+              "on-secondary-container": "#5c655d",
+              "on-primary-fixed-variant": "#364c3c",
+              surface: "#f9f9f8",
+              "on-primary-fixed": "#0b2013",
+              "inverse-surface": "#2e3131",
+              primary: "#061b0e",
+              secondary: "#586159",
+              "surface-variant": "#e1e3e2",
+              "on-primary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "primary-container": "#1b3022",
+              background: "#f9f9f8",
+              outline: "#737973",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#3f2427",
+              "surface-dim": "#d9dad9",
+              "on-primary-container": "#819986",
+              "surface-container-high": "#e7e8e7",
+              "surface-container-highest": "#e1e3e2",
+              "secondary-fixed-dim": "#c0c9bf",
+              "surface-container-low": "#f3f4f3",
+              "on-secondary-fixed": "#151d17",
+              "primary-fixed-dim": "#b4cdb8",
+              "on-surface-variant": "#434843",
+              error: "#ba1a1a",
+              "inverse-on-surface": "#f0f1f0",
+              "secondary-container": "#d9e2d8",
+              "on-tertiary-container": "#b0898c",
+              "on-background": "#191c1c",
+              "inverse-primary": "#b4cdb8",
+              "on-error": "#ffffff",
+              "on-secondary-fixed-variant": "#404941",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-fixed-variant": "#5d3f42",
+              "surface-tint": "#4d6453",
+              "surface-bright": "#f9f9f8",
+              "on-surface": "#191c1c",
+              "primary-fixed": "#d0e9d4",
+              "surface-container": "#edeeed",
+              "on-error-container": "#93000a",
+              "error-container": "#ffdad6",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            fontFamily: {
+              headline: ["Newsreader"],
+              body: ["Manrope"],
+              label: ["Manrope"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .reading-progress-bar {
+        height: 2px;
+        width: 35%; /* Simulated progress */
+      }
+      .editorial-shadow {
+        box-shadow: 0px 20px 40px rgba(25, 28, 28, 0.06);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <!-- TopNavBar -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-[#f9f9f8]/80 dark:bg-[#061b0e]/80 backdrop-blur-xl"
+    >
+      <div
+        class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6 w-full"
+      >
+        <a href="../index.html">
+          <div
+            class="font-['Newsreader'] text-2xl font-bold tracking-tighter text-[#061b0e] dark:text-[#f9f9f8]"
+          >
+            The Quiet Editorial
+          </div>
+        </a>
+        <div class="hidden md:flex gap-10">
+          <a
+            class="font-['Newsreader'] text-lg tracking-tight text-[#586159] dark:text-[#e1e3e2] hover:text-[#061b0e] dark:hover:text-[#ffffff] transition-colors duration-300"
+            href="#"
+            >Essays</a
+          >
+          <a
+            class="font-['Newsreader'] text-lg tracking-tight text-[#061b0e] dark:text-[#f9f9f8] border-b-2 border-[#061b0e] dark:border-[#f9f9f8] pb-1"
+            href="#"
+            >Journal</a
+          >
+          <a
+            class="font-['Newsreader'] text-lg tracking-tight text-[#586159] dark:text-[#e1e3e2] hover:text-[#061b0e] dark:hover:text-[#ffffff] transition-colors duration-300"
+            href="#"
+            >Archive</a
+          >
+          <a
+            class="font-['Newsreader'] text-lg tracking-tight text-[#586159] dark:text-[#e1e3e2] hover:text-[#061b0e] dark:hover:text-[#ffffff] transition-colors duration-300"
+            href="#"
+            >About</a
+          >
+        </div>
+        <div class="flex items-center gap-4">
+          <span
+            class="material-symbols-outlined text-[#061b0e] dark:text-[#f9f9f8]"
+            data-icon="menu"
+            >menu</span
+          >
+        </div>
+      </div>
+      <!-- <div class="reading-progress-bar bg-primary"></div> -->
+    </nav>
+    <main class="pt-32 pb-24">
+      <!-- Hero Section -->
+      <header class="max-w-5xl mx-auto px-8 mb-20 text-center">
+        <div class="mb-6">
+          <span
+            class="font-label text-sm tracking-[0.2em] uppercase text-secondary"
+            >Mindfulness &amp; Flow</span
+          >
+        </div>
+        <h1
+          class="font-headline text-5xl md:text-7xl leading-tight tracking-tight text-on-surface mb-8"
+        >
+          Decluttering Your Mind for Better Mental Health
+        </h1>
+        <div
+          class="flex justify-center items-center gap-6 font-label text-sm text-secondary italic"
+        >
+          <span>By Elena Vance</span>
+          <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+          <span>8 Min Read</span>
+          <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+          <span>November 14, 2024</span>
+        </div>
+      </header>
+      <!-- Feature Image Breakout -->
+      <div class="relative w-full max-w-7xl mx-auto px-4 mb-24 h-[614px]">
+        <img
+          alt="Mental Clarity"
+          class="w-full h-full object-cover rounded-xl editorial-shadow"
+          data-alt="Abstract soft focus ripples on water with muted neutral tones creating a sense of calm and clarity in natural lighting"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr9fXTLLoVHqWPB6x-BKn1jK0pHkat6GDFraHWxlp2112dFrb55edTRS9RG4MvOGS5P0WSyoRyGE4kZovx88ovI5jChvpzxTKRgmmw9_GM5BrVRQOeUAS_sEHkeqHluKn5QsgCVUIJUq3ZE2UcA1uDnG5oaxjdj-rlDZqmJLbYvNcWDrIX5T1l9_Zoa8U21QLSsYKL2x44OuUZb_B_RUQdcZnHjK7CH8I9kbLXtyEBgyfbKpZPFZ3TkUhwMJoN4hC8p8W0eOqjRi72"
+        />
+      </div>
+      <!-- Article Content -->
+      <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row gap-16">
+        <!-- Content Column -->
+        <article class="flex-grow max-w-3xl">
+          <p
+            class="font-headline text-2xl leading-relaxed text-secondary italic mb-12"
+          >
+            In an age of constant noise, the space between our thoughts has
+            become our most valuable real estate. Decluttering the mind isn't
+            about emptying it, but about curating what stays.
+          </p>
+          <div
+            class="space-y-12 text-on-surface text-lg leading-[1.8] font-body"
+          >
+            <p>
+              We often speak of digital decluttering or organizing our physical
+              spaces, yet the most congested area of our lives remains hidden.
+              Our minds are perpetually processing a stream of notifications,
+              anxieties, and unresolved tasks. This mental load, if left
+              unmanaged, manifests as chronic fatigue and diminished creativity.
+            </p>
+            <h2
+              class="font-headline text-3xl font-bold text-primary mt-16 mb-6"
+            >
+              01. The Brain Dump Technique
+            </h2>
+            <p>
+              The first step to clarity is externalization. When we keep every
+              "to-do" and every "what-if" in our active memory, we exhaust our
+              prefrontal cortex.
+            </p>
+            <ul
+              class="space-y-6 pl-6 border-l-2 border-surface-container-highest"
+            >
+              <li>
+                <strong>Unfiltered Listing:</strong> Spend ten minutes every
+                morning writing down every single thought, no matter how
+                trivial.
+              </li>
+              <li>
+                <strong>Categorization:</strong> Separate these into
+                "Actionable," "Scheduled," and "Trash."
+              </li>
+              <li>
+                <strong>Release:</strong> Once it is on paper, give yourself
+                psychological permission to stop thinking about it.
+              </li>
+            </ul>
+            <div class="my-16 bg-surface-container-low p-12 rounded-xl">
+              <h3 class="font-headline text-2xl mb-4 italic">
+                "The mind is for having ideas, not holding them."
+              </h3>
+              <p
+                class="font-label text-sm text-secondary uppercase tracking-widest"
+              >
+                — David Allen
+              </p>
+            </div>
+            <h2
+              class="font-headline text-3xl font-bold text-primary mt-16 mb-6"
+            >
+              02. Selective Ignorance
+            </h2>
+            <p>
+              Modern life demands our attention at every turn. Decluttering
+              requires the discipline of selective ignorance—the art of knowing
+              what to ignore.
+            </p>
+            <ul
+              class="space-y-6 pl-6 border-l-2 border-surface-container-highest"
+            >
+              <li>
+                <strong>Audit your Inputs:</strong> Identify which news sources
+                or social feeds leave you feeling drained rather than informed.
+              </li>
+              <li>
+                <strong>Single-Tasking:</strong> Prohibit multitasking. When you
+                eat, eat. When you walk, walk. This reduces the mental "residue"
+                left by switching tasks.
+              </li>
+              <li>
+                <strong>Digital Sabbaths:</strong> Allocate blocks of time where
+                the phone is physically in another room.
+              </li>
+            </ul>
+            <div class="relative h-96 my-16 rounded-xl overflow-hidden">
+              <img
+                alt="Clarity in space"
+                class="w-full h-full object-cover"
+                data-alt="Minimalist workspace with a single ceramic cup and a blank notebook in soft morning sunlight with long shadows"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBEUoJdnAuJKAdaypIVB6MT7wkt_aaEWHsjP2xK_ZpHUCDu1heeNnCFjzuG448BMzYS08Y9Zum3OCACF6x0bZkSx30aisZLLPKXvxZjPerLM9E8XQlLjgP41vUgf7A8ziIpcGngv5YyaWui6q7oSisZErIihmEkTJI9rbGk3hRUja11xQpPHcCHY6fr3RpKrAya2DiGInlS5wFEsU0RXT3qrlagTZuD_RcNlTOVlCXCKAwwlRCM3z46Q5hlcbIgEyNpPOUXXE0o4lg"
+              />
+            </div>
+            <h2
+              class="font-headline text-3xl font-bold text-primary mt-16 mb-6"
+            >
+              03. Designing Rituals of Stillness
+            </h2>
+            <p>
+              Stillness is the antithesis of clutter. It allows the "silt" of
+              our thoughts to settle at the bottom, leaving the water clear.
+            </p>
+            <ul
+              class="space-y-6 pl-6 border-l-2 border-surface-container-highest"
+            >
+              <li>
+                <strong>The Morning Buffer:</strong> Avoid checking your phone
+                for the first 30 minutes of the day. This protects your internal
+                state from external demands.
+              </li>
+              <li>
+                <strong>Breath as an Anchor:</strong> Use the 4-7-8 breathing
+                technique when mental loops start to spiral. It physically
+                signals safety to your nervous system.
+              </li>
+              <li>
+                <strong>Nature Integration:</strong> Scientific studies show
+                that "green time" reduces cortisol significantly more than
+                indoor rest.
+              </li>
+            </ul>
+          </div>
+        </article>
+        <!-- Sidebar / Sticky Info -->
+        <aside class="hidden lg:block w-72 space-y-12">
+          <div class="sticky top-40 space-y-12">
+            <div class="p-8 bg-surface-container-low rounded-xl">
+              <h4 class="font-headline text-xl mb-4">Related Essays</h4>
+              <ul class="space-y-6">
+                <li>
+                  <a class="group" href="#">
+                    <span
+                      class="block text-xs font-label uppercase tracking-widest text-secondary mb-1"
+                      >Rituals</span
+                    >
+                    <span
+                      class="block font-headline text-lg group-hover:text-surface-tint transition-colors"
+                      >The Art of Slower Mornings</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a class="group" href="#">
+                    <span
+                      class="block text-xs font-label uppercase tracking-widest text-secondary mb-1"
+                      >Space</span
+                    >
+                    <span
+                      class="block font-headline text-lg group-hover:text-surface-tint transition-colors"
+                      >Visual Quiet in Architecture</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="p-8 border border-outline-variant/15 rounded-xl text-center"
+            >
+              <span
+                class="material-symbols-outlined text-primary mb-4"
+                data-icon="mail"
+                >mail</span
+              >
+              <h4 class="font-headline text-xl mb-2">The Sunday Edition</h4>
+              <p class="text-sm text-secondary mb-6">
+                One thoughtful essay delivered to your inbox every week.
+              </p>
+              <button
+                class="w-full bg-primary text-on-primary py-3 px-6 rounded-md font-label text-sm uppercase tracking-widest hover:opacity-90 transition-opacity"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="w-full border-t border-[#c3c8c1]/15 bg-[#f9f9f8] dark:bg-[#061b0e]"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 w-full"
+      >
+        <div
+          class="font-['Newsreader'] italic text-xl text-[#061b0e] dark:text-[#f9f9f8]"
+        >
+          The Quiet Editorial
+        </div>
+        <div class="flex flex-wrap justify-center gap-8">
+          <a
+            class="font-['Manrope'] text-sm tracking-widest uppercase text-[#586159] dark:text-[#e1e3e2] hover:text-[#061b0e] dark:hover:text-[#ffffff] underline underline-offset-4"
+            href="#"
+            >Privacy</a
+          >
+          <a
+            class="font-['Manrope'] text-sm tracking-widest uppercase text-[#586159] dark:text-[#e1e3e2] hover:text-[#061b0e] dark:hover:text-[#ffffff] underline underline-offset-4"
+            href="#"
+            >Terms</a
+          >
+          <a
+            class="font-['Manrope'] text-sm tracking-widest uppercase text-[#586159] dark:text-[#e1e3e2] hover:text-[#061b0e] dark:hover:text-[#ffffff] underline underline-offset-4"
+            href="#"
+            >Newsletter</a
+          >
+          <a
+            class="font-['Manrope'] text-sm tracking-widest uppercase text-[#586159] dark:text-[#e1e3e2] hover:text-[#061b0e] dark:hover:text-[#ffffff] underline underline-offset-4"
+            href="#"
+            >Contact</a
+          >
+        </div>
+        <div
+          class="font-['Manrope'] text-sm tracking-widest uppercase text-[#586159] dark:text-[#e1e3e2]"
+        >
+          © 2024 The Quiet Editorial. Intentional Space.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -42,6 +42,17 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
+  relational-database-server:
+    image: mariadb:11
+    container_name: relational-database-server
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: minicloud
+    volumes:
+      - ./relational-database-server/init:/docker-entrypoint-initdb.d:ro
+    ports: ["3306:3306"]
+    networks: [cloud-net]
+
   authentication-identity-server:
     image: quay.io/keycloak/keycloak:latest
     container_name: authentication-identity-server

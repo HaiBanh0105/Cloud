@@ -1,0 +1,460 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72@0,1&amp;family=Manrope:wght@200..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffd9dc",
+              "outline-variant": "#c3c8c1",
+              "on-tertiary-fixed": "#2d1417",
+              "tertiary-fixed-dim": "#e7bcbf",
+              tertiary: "#271013",
+              "secondary-fixed": "#dce5db",
+              "on-secondary-container": "#5c655d",
+              "on-primary-fixed-variant": "#364c3c",
+              surface: "#f9f9f8",
+              "on-primary-fixed": "#0b2013",
+              "inverse-surface": "#2e3131",
+              primary: "#061b0e",
+              secondary: "#586159",
+              "surface-variant": "#e1e3e2",
+              "on-primary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "primary-container": "#1b3022",
+              background: "#f9f9f8",
+              outline: "#737973",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#3f2427",
+              "surface-dim": "#d9dad9",
+              "on-primary-container": "#819986",
+              "surface-container-high": "#e7e8e7",
+              "surface-container-highest": "#e1e3e2",
+              "secondary-fixed-dim": "#c0c9bf",
+              "surface-container-low": "#f3f4f3",
+              "on-secondary-fixed": "#151d17",
+              "primary-fixed-dim": "#b4cdb8",
+              "on-surface-variant": "#434843",
+              error: "#ba1a1a",
+              "inverse-on-surface": "#f0f1f0",
+              "secondary-container": "#d9e2d8",
+              "on-tertiary-container": "#b0898c",
+              "on-background": "#191c1c",
+              "inverse-primary": "#b4cdb8",
+              "on-error": "#ffffff",
+              "on-secondary-fixed-variant": "#404941",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-fixed-variant": "#5d3f42",
+              "surface-tint": "#4d6453",
+              "surface-bright": "#f9f9f8",
+              "on-surface": "#191c1c",
+              "primary-fixed": "#d0e9d4",
+              "surface-container": "#edeeed",
+              "on-error-container": "#93000a",
+              "error-container": "#ffdad6",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            fontFamily: {
+              headline: ["Newsreader"],
+              body: ["Manrope"],
+              label: ["Manrope"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .editorial-gradient {
+        background: linear-gradient(135deg, #061b0e 0%, #1b3022 100%);
+      }
+      .glass-nav {
+        background: rgba(249, 249, 248, 0.8);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body selection:bg-primary-fixed-dim"
+  >
+    <!-- Reading Progress Indicator -->
+    <div class="fixed top-0 left-0 w-full h-[2px] z-[60] bg-surface-container">
+      <div class="h-full bg-primary w-1/3"></div>
+    </div>
+    <!-- TopNavBar -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-[#f9f9f8]/80 dark:bg-[#061b0e]/80 backdrop-blur-xl"
+    >
+      <div
+        class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6 w-full"
+      >
+        <a
+          class="font-['Newsreader'] text-2xl font-bold tracking-tighter text-[#061b0e] dark:text-[#f9f9f8]"
+          href="#"
+          >The Quiet Editorial</a
+        >
+        <div class="hidden md:flex gap-10">
+          <a
+            class="font-['Newsreader'] text-lg tracking-tight text-[#061b0e] dark:text-[#f9f9f8] border-b-2 border-[#061b0e] dark:border-[#f9f9f8] pb-1 hover:text-[#061b0e] dark:hover:text-[#ffffff] transition-colors duration-300"
+            href="#"
+            >Essays</a
+          >
+          <a
+            class="font-['Newsreader'] text-lg tracking-tight text-[#586159] dark:text-[#e1e3e2] hover:text-[#061b0e] dark:hover:text-[#ffffff] transition-colors duration-300"
+            href="#"
+            >Journal</a
+          >
+          <a
+            class="font-['Newsreader'] text-lg tracking-tight text-[#586159] dark:text-[#e1e3e2] hover:text-[#061b0e] dark:hover:text-[#ffffff] transition-colors duration-300"
+            href="#"
+            >Archive</a
+          >
+          <a
+            class="font-['Newsreader'] text-lg tracking-tight text-[#586159] dark:text-[#e1e3e2] hover:text-[#061b0e] dark:hover:text-[#ffffff] transition-colors duration-300"
+            href="#"
+            >About</a
+          >
+        </div>
+        <div class="flex items-center gap-4">
+          <button class="text-[#061b0e] dark:text-[#f9f9f8] p-1">
+            <span class="material-symbols-outlined" data-icon="menu">menu</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <main class="pt-24">
+      <!-- Hero Section: Featured Article -->
+      <section class="max-w-7xl mx-auto px-8 py-16 md:py-24">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+          <div class="md:col-span-7 order-2 md:order-1">
+            <span
+              class="font-label text-xs uppercase tracking-widest text-secondary mb-4 block"
+              >Featured Essay</span
+            >
+            <h1
+              class="font-headline text-5xl md:text-7xl lg:text-8xl leading-tight tracking-tighter text-on-surface mb-8"
+            >
+              The Art of Living <br /><span class="italic">with Less</span>
+            </h1>
+            <p
+              class="font-body text-lg md:text-xl text-on-surface-variant leading-relaxed max-w-xl mb-10"
+            >
+              In an age of constant noise, the bravest thing you can do is carve
+              out space for silence. Discover the transformative power of
+              intentional living.
+            </p>
+            <a
+              class="inline-flex items-center gap-3 editorial-gradient text-on-primary px-8 py-4 rounded-md font-label text-sm uppercase tracking-widest hover:opacity-90 transition-opacity"
+              href="#"
+            >
+              Read the Essay
+              <span
+                class="material-symbols-outlined text-sm"
+                data-icon="arrow_forward"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+          <div class="md:col-span-5 order-1 md:order-2">
+            <div class="relative">
+              <div
+                class="aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700"
+              >
+                <img
+                  alt="minimalist room"
+                  class="w-full h-full object-cover grayscale-[20%] contrast-[110%]"
+                  data-alt="a serene minimalist interior with a single wooden chair, a stack of books, and soft morning sunlight casting long shadows"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGSP15CimGODRNWPhIvFN2MT8sRD5GbK51ewc-QKf3ME5OorCfyIUZPNSajzLT0AzsVrzcCjz29dOBSuMrk9gyYYhz4jx0XwmaW8V7G-5kjGyFX3BEfCud5jZjab-JYUstKkGBldgX_3k3FqmOTWq3GD-RGvifl73R_u9-FGACqI2vKfOO0DSwf0Z8iO2sspKAEvfwmvBMf6ahOrWmh6t4ti5yhSSoqRh9iqKCwav2_lp2ZTpYuVtscGbZMw9DiXy1NIzSRJx2yeHL"
+                />
+              </div>
+              <div
+                class="absolute -bottom-6 -left-6 w-32 h-32 editorial-gradient rounded-full hidden md:flex items-center justify-center text-on-primary"
+              >
+                <span class="material-symbols-outlined text-4xl" data-icon="eco"
+                  >eco</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Category Filter -->
+      <section class="max-w-7xl mx-auto px-8 mb-16">
+        <div
+          class="flex flex-wrap gap-8 py-8 border-t border-outline-variant/15"
+        >
+          <span
+            class="font-label text-xs uppercase tracking-widest text-secondary pt-1"
+            >Explore</span
+          >
+          <button
+            class="font-label text-sm uppercase tracking-[0.2em] text-primary font-bold border-b-2 border-primary pb-1"
+          >
+            All Perspectives
+          </button>
+          <button
+            class="font-label text-sm uppercase tracking-[0.2em] text-secondary hover:text-primary transition-colors"
+          >
+            Mindfulness
+          </button>
+          <button
+            class="font-label text-sm uppercase tracking-[0.2em] text-secondary hover:text-primary transition-colors"
+          >
+            Interior Design
+          </button>
+          <button
+            class="font-label text-sm uppercase tracking-[0.2em] text-secondary hover:text-primary transition-colors"
+          >
+            Sustainability
+          </button>
+        </div>
+      </section>
+      <!-- Bento Post Grid -->
+      <section class="max-w-7xl mx-auto px-8 pb-24">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <!-- Large Featured Card -->
+          <article class="md:col-span-2 group">
+            <div
+              class="aspect-video overflow-hidden rounded-xl bg-surface-container mb-6"
+            >
+              <a href="./blog/blog3.html">
+                <img
+                  alt="yoga morning"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  data-alt="peaceful morning scene with a yoga mat on a wooden floor near a window with soft light filtering through sheer curtains"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzc_MMaR6vWfU5LjMnfaa9etUnw6EorLOMLhNOmH3RKfbGBoH1o91NlaWJywk8Tm3HrVsYlD_tjrfg9hsvNxdbEGJX3BM611UuAIzRDolxg_9de4M2ITDr5V2FMGACGnGz1MWeJlCrX7REshnNW0Cp7m158omq_7UEmw1mf2y58aTRV0qgyHb9oRbanGXcSDiwTJCfNydNOX9zzoAT8MKKanprVAeAaYBrUpRj-OykMjBlgqYsYKtAqaLoyhU6ChneF0MN-CW1Bx37"
+                />
+              </a>
+            </div>
+            <div class="max-w-2xl">
+              <span
+                class="font-label text-[10px] uppercase tracking-[0.3em] text-on-primary-container bg-secondary-container px-3 py-1 rounded-full mb-4 inline-block"
+                >Mindfulness</span
+              >
+              <h3
+                class="font-headline text-3xl md:text-4xl text-on-surface mb-4 group-hover:italic transition-all"
+              >
+                Morning Rituals: The Beauty of Sustainable Wardrobes
+              </h3>
+              <p class="font-body text-on-surface-variant leading-relaxed">
+                "The most sustainable garment is the one already in your closet,
+                followed closely by the one crafted to last a lifetime."
+              </p>
+            </div>
+          </article>
+          <!-- Sidebar Content -->
+          <div class="flex flex-col gap-12">
+            <article class="group">
+              <div
+                class="aspect-square overflow-hidden rounded-xl bg-surface-container-low mb-4"
+              >
+                <img
+                  alt="clean interior"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  data-alt="a modern white living space with clean lines, a large green plant, and functional minimalist furniture"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdYXNR5wDqo-BXopSnlIWc5xACNkbzw0I5VXIs1DkNbUR8ZZyyW8IbD-1va3oIDh4bjpyWScnwjuvuU3l9FjZN3SbRK6BnnhWO28Am_HrasRCYOrfcMSFX1X45s-SpM_OCPVqhBPy3d25ExozIjGJhXEyECeMZMm4E7w736FFE8wkhTnd_XMrWk8e2Gx_BqxFDGsR2M80gQN-wegYdTFl8Ix3H-KGJVkL-tdvzytdIHnzEqX0ACxReaubUMXPihLpMvIWm2QATUXbE"
+                />
+              </div>
+              <span
+                class="font-label text-[10px] uppercase tracking-[0.3em] text-secondary mb-2 block"
+                >Materiality and Ethics
+              </span>
+              <h4 class="font-headline text-2xl text-on-surface">
+                The Anatomy of a Zero-Waste Kitchen
+              </h4>
+            </article>
+            <article class="group">
+              <div
+                class="aspect-square overflow-hidden rounded-xl bg-surface-container-low mb-4"
+              >
+                <img
+                  alt="meditation"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  data-alt="close-up of hands resting on knees during meditation in a quiet, sunlit room with natural wood textures"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-l-QjhGWyYhYFxy66129CqYEv-grQxEbGiemxoPS3Shnq6e6qcWgrO8KMsk-y76sa4A4aPX3ITf7I30FYOsyD6o_-hUgr6WHeU0cKKH269BfVkgPmis2IM7CLtykR4V93mLKIMbxol6VZzyJA_ZgE0r5LFhQPZWYqNTxknpZzoZtUBzD2Q1DPXD-soSb62tn0XHEru3N4GerAOscd48RPEfrKAuCzZvTbWQLe4H4HLb64Syzc6BArmyuj9HRAoELAzBgzttm-fb07"
+                />
+              </div>
+              <span
+                class="font-label text-[10px] uppercase tracking-[0.3em] text-secondary mb-2 block"
+                >Materiality and Ethics</span
+              >
+              <h4 class="font-headline text-2xl text-on-surface">
+                Ethical fashion begins with the fiber.
+              </h4>
+            </article>
+          </div>
+        </div>
+        <!-- More Posts Row -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mt-24">
+          <div class="md:col-span-1 pt-4 border-t border-outline-variant/15">
+            <h2 class="font-headline text-4xl italic text-primary">
+              In the <br />Archive
+            </h2>
+          </div>
+          <div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-12">
+            <article class="group">
+              <div
+                class="aspect-square overflow-hidden rounded-xl bg-surface-container mb-4"
+              >
+                <a href="./blog/blog2.html">
+                  <img
+                    alt="travel"
+                    class="w-full h-full object-cover"
+                    data-alt="person hiking in a misty mountain range with light gear, emphasizing the freedom of slow and light travel"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr9fXTLLoVHqWPB6x-BKn1jK0pHkat6GDFraHWxlp2112dFrb55edTRS9RG4MvOGS5P0WSyoRyGE4kZovx88ovI5jChvpzxTKRgmmw9_GM5BrVRQOeUAS_sEHkeqHluKn5QsgCVUIJUq3ZE2UcA1uDnG5oaxjdj-rlDZqmJLbYvNcWDrIX5T1l9_Zoa8U21QLSsYKL2x44OuUZb_B_RUQdcZnHjK7CH8I9kbLXtyEBgyfbKpZPFZ3TkUhwMJoN4hC8p8W0eOqjRi72"
+                  />
+                </a>
+              </div>
+              <span
+                class="font-label text-[10px] uppercase tracking-[0.3em] text-secondary mb-2 block"
+                >Mindfulness</span
+              >
+              <h4 class="font-headline text-xl text-on-surface mb-2">
+                Decluttering Your Mind for Better Mental Health
+              </h4>
+              <p class="text-sm text-on-surface-variant font-body">
+                Decluttering the mind isn't about emptying it, but about
+                curating what stays.
+              </p>
+            </article>
+            <article class="group">
+              <div
+                class="aspect-square overflow-hidden rounded-xl bg-surface-container mb-4"
+              >
+                <a href="./blog/blog1.html">
+                  <img
+                    alt="home office"
+                    class="w-full h-full object-cover"
+                    data-alt="a perfectly organized home office desk with a laptop, a simple notebook, and a ceramic mug on a light wood surface"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsz7IAolCAG-NievwW0Vln1nwiqbQFES8Q8NirRBsi33QD1oF8jkVHzlhWJApL8_eSutQ3OrgyTNaz_MgwOJo7CS8295ykIz7hI5nQy7BiDmUk8LPP7DdMSIm7axk2Cxs2iZj2z3Va7RhzxyBaHW_EptCUmUux1Y52pQjVjDxFRhTwlg0eUaPMItIGUiwNTcyrxBUuzK7CkfFac4gM6eGSY_skgBfO_loqtyrFudapg2qcgJNJ60DnB9db8tSuOg7PT5pV9kjRgAJ9"
+                  />
+                </a>
+              </div>
+              <span
+                class="font-label text-[10px] uppercase tracking-[0.3em] text-secondary mb-2 block"
+                >Series: Mindful Living</span
+              >
+              <h4 class="font-headline text-xl text-on-surface mb-2">
+                Essentialism: A Guide to Focused Living
+              </h4>
+              <p class="text-sm text-on-surface-variant font-body">
+                How stripping away the non-essential creates the space required
+                for true contribution and clarity.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- Newsletter Section -->
+      <section
+        class="bg-surface-container-low py-24 px-8 mt-12 overflow-hidden relative"
+      >
+        <div class="max-w-3xl mx-auto text-center relative z-10">
+          <span
+            class="font-label text-xs uppercase tracking-[0.4em] text-secondary mb-6 block"
+            >Stay Intentional</span
+          >
+          <h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-8">
+            Essays on life, delivered monthly to your inbox.
+          </h2>
+          <div
+            class="flex flex-col sm:flex-row gap-0 max-w-lg mx-auto border-b border-primary"
+          >
+            <input
+              class="bg-transparent border-none focus:ring-0 w-full py-4 font-body text-primary placeholder:text-outline-variant"
+              placeholder="email@example.com"
+              type="email"
+            />
+            <button
+              class="font-label text-xs uppercase tracking-widest text-primary font-bold py-4 px-6 hover:bg-primary hover:text-on-primary transition-all"
+            >
+              Join the Circle
+            </button>
+          </div>
+          <p class="mt-6 text-xs text-secondary font-body italic">
+            We respect your space. No spam, ever.
+          </p>
+        </div>
+        <div
+          class="absolute -right-24 -bottom-24 w-96 h-96 border border-outline-variant/10 rounded-full"
+        ></div>
+        <div
+          class="absolute -left-24 -top-24 w-64 h-64 border border-outline-variant/10 rounded-full"
+        ></div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="w-full border-t border-[#c3c8c1]/15 bg-[#f9f9f8] dark:bg-[#061b0e]"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 w-full"
+      >
+        <div class="flex flex-col items-center md:items-start gap-2">
+          <span
+            class="font-['Newsreader'] italic text-xl text-[#061b0e] dark:text-[#f9f9f8]"
+            >The Quiet Editorial</span
+          >
+          <p
+            class="font-['Manrope'] text-sm tracking-widest uppercase text-[#586159] dark:text-[#e1e3e2]"
+          >
+            © 2024 The Quiet Editorial. Intentional Space.
+          </p>
+        </div>
+        <div class="flex gap-12">
+          <a
+            class="font-['Manrope'] text-sm tracking-widest uppercase text-[#586159] dark:text-[#e1e3e2] hover:text-[#061b0e] dark:hover:text-[#ffffff] underline underline-offset-4"
+            href="#"
+            >Privacy</a
+          >
+          <a
+            class="font-['Manrope'] text-sm tracking-widest uppercase text-[#586159] dark:text-[#e1e3e2] hover:text-[#061b0e] dark:hover:text-[#ffffff] underline underline-offset-4"
+            href="#"
+            >Terms</a
+          >
+          <a
+            class="font-['Manrope'] text-sm tracking-widest uppercase text-[#586159] dark:text-[#e1e3e2] hover:text-[#061b0e] dark:hover:text-[#ffffff] underline underline-offset-4"
+            href="#"
+            >Newsletter</a
+          >
+          <a
+            class="font-['Manrope'] text-sm tracking-widest uppercase text-[#586159] dark:text-[#e1e3e2] hover:text-[#061b0e] dark:hover:text-[#ffffff] underline underline-offset-4"
+            href="#"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
