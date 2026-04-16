@@ -1,0 +1,6 @@
+// Zone nội bộ cloud.internal
+zone "cloud.internal" IN {
+    type master;
+    file "/etc/bind/db.cloud.internal";
+    allow-query { any; };
+};

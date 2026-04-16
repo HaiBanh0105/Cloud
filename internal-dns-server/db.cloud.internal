@@ -1,0 +1,63 @@
+; Zone file cho cloud.internal
+; Bao gồm tất cả 9 server cơ bản + 3 bản ghi mở rộng
+
+$TTL 1H
+
+; SOA Record
+@   IN  SOA     ns.cloud.internal. admin.cloud.internal. (
+                2025010101  ; Serial   (tăng mỗi lần sửa file)
+                1H          ; Refresh  (slave kiểm tra sau bao lâu)
+                15M         ; Retry    (thử lại nếu refresh thất bại)
+                1W          ; Expire   (slave xóa dữ liệu sau bao lâu)
+                1H          ; Negative TTL
+)
+
+; Name Server
+@               IN  NS      ns.cloud.internal.
+
+; Bản ghi A cho Name Server
+ns              IN  A       10.10.10.254
+
+; ============================================================
+; 9 SERVER CƠ BẢN
+; ============================================================
+
+; 1. Web Frontend Server (Nginx static - port 8080)
+web-frontend-server         IN  A   10.10.10.10
+
+; 2. Application Backend Server (Flask API - port 8085)
+application-backend-server  IN  A   10.10.10.20
+
+; 3. Relational Database Server (MariaDB - port 3306)
+relational-database-server  IN  A   10.10.10.30
+
+; 4. Authentication Identity Server (Keycloak - port 8081)
+authentication-identity-server  IN  A   10.10.10.40
+
+; 5. Object Storage Server (MinIO - port 9000/9001)
+object-storage-server       IN  A   10.10.10.50
+
+; 6. internal DNS Server (Bind9 - port 1053)
+internal-dns-server         IN  A   10.10.10.254
+
+; 7. Monitoring Prometheus Server (port 9090)
+monitoring-prometheus-server    IN  A   10.10.10.70
+
+; 8. Monitoring Grafana Dashboard Server (port 3000)
+monitoring-grafana-dashboard-server  IN  A   10.10.10.80
+
+; 9. API Gateway Proxy Server (Nginx - port 80)
+api-gateway-proxy-server    IN  A   10.10.10.90
+
+; ============================================================
+; MỞ RỘNG: ALIAS NGẮN GỌN CHO TỪNG SERVER
+; ============================================================
+
+; Bản ghi mở rộng 1: app-backend → Application Backend Server
+app-backend     IN  A   10.10.10.20
+
+; Bản ghi mở rộng 2: minio → Object Storage Server
+minio           IN  A   10.10.10.50
+
+; Bản ghi mở rộng 3: keycloak → Authentication Identity Server
+keycloak        IN  A   10.10.10.40

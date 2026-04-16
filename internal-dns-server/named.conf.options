@@ -1,0 +1,24 @@
+options {
+    directory "/var/cache/bind";
+
+    // Cho phép query từ mọi địa chỉ (container trong cloud-net)
+    allow-query { any; };
+
+    // Bật đệ quy để resolver các tên miền ngoài (nếu cần)
+    recursion yes;
+
+    // Chuyển tiếp query không thuộc zone nội bộ sang DNS công cộng
+    forwarders {
+        8.8.8.8;
+        8.8.4.4;
+    };
+
+    forward only;
+
+    // Tắt DNSSEC validation (môi trường lab nội bộ)
+    dnssec-validation no;
+
+    // Lắng nghe trên tất cả interface
+    listen-on { any; };
+    listen-on-v6 { any; };
+};
