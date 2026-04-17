@@ -35,7 +35,7 @@ services:
 
   application-backend-server:
     build: ./application-backend-server
-    # image: duyphan020/app:dev
+    image: duyphan020/app:dev
     container_name: application-backend-server
     restart: unless-stopped
     depends_on:
