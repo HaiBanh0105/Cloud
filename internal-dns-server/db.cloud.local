@@ -1,10 +1,10 @@
-; Zone file cho cloud.internal
+; Zone file cho cloud.local
 ; Bao gồm tất cả 9 server cơ bản + 3 bản ghi mở rộng
 
 $TTL 1H
 
 ; SOA Record
-@   IN  SOA     ns.cloud.internal. admin.cloud.internal. (
+@   IN  SOA     ns.cloud.local. admin.cloud.local. (
                 2025010101  ; Serial   (tăng mỗi lần sửa file)
                 1H          ; Refresh  (slave kiểm tra sau bao lâu)
                 15M         ; Retry    (thử lại nếu refresh thất bại)
@@ -13,7 +13,7 @@ $TTL 1H
 )
 
 ; Name Server
-@               IN  NS      ns.cloud.internal.
+@               IN  NS      ns.cloud.local.
 
 ; Bản ghi A cho Name Server
 ns              IN  A       10.10.10.254
@@ -23,7 +23,10 @@ ns              IN  A       10.10.10.254
 ; ============================================================
 
 ; 1. Web Frontend Server (Nginx static - port 8080)
+web-frontend-server1        IN  A   10.10.10.10
+web-frontend-server2        IN  A   10.10.10.11
 web-frontend-server         IN  A   10.10.10.10
+web-frontend-server         IN  A   10.10.10.11
 
 ; 2. Application Backend Server (Flask API - port 8085)
 application-backend-server  IN  A   10.10.10.20
@@ -37,8 +40,8 @@ authentication-identity-server  IN  A   10.10.10.40
 ; 5. Object Storage Server (MinIO - port 9000/9001)
 object-storage-server       IN  A   10.10.10.50
 
-; 6. internal DNS Server (Bind9 - port 1053)
-internal-dns-server         IN  A   10.10.10.254
+; 6. local DNS Server (Bind9 - port 1053)
+local-dns-server         IN  A   10.10.10.254
 
 ; 7. Monitoring Prometheus Server (port 9090)
 monitoring-prometheus-server    IN  A   10.10.10.70

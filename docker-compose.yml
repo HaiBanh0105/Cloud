@@ -7,16 +7,25 @@ networks:
         - subnet: 10.10.10.0/24
 
 services:
-  web-frontend-server:
+  web-frontend-server1:
     build: ./web-frontend-server
-    image: hotensv/web:dev
+    container_name: web-frontend-server1
+    image: duyphan020/web:dev
     networks:
       cloud-net:
         ipv4_address: 10.10.10.10
+  
+  web-frontend-server2:
+    build: ./web-frontend-server
+    container_name: web-frontend-server2
+    image: duyphan020/web:dev
+    networks:
+      cloud-net:
+        ipv4_address: 10.10.10.11
 
   application-backend-server:
     build: ./application-backend-server
-    image: VoDatHai/app:dev
+    image: duyphan020/app:dev
     container_name: application-backend-server
     networks:
       cloud-net:
@@ -84,7 +93,7 @@ services:
       - ./internal-dns-server/named.conf:/etc/bind/named.conf:ro
       - ./internal-dns-server/named.conf.options:/etc/bind/named.conf.options:ro
       - ./internal-dns-server/named.conf.local:/etc/bind/named.conf.local:ro
-      - ./internal-dns-server/db.cloud.internal:/etc/bind/db.cloud.internal:ro
+      - ./internal-dns-server/db.cloud.local:/etc/bind/db.cloud.local:ro
     networks:
       cloud-net:
         ipv4_address: 10.10.10.254
@@ -119,10 +128,11 @@ services:
     image: nginx:stable
     container_name: api-gateway-proxy-server
     depends_on:
-      - web-frontend-server
+      - web-frontend-server1
+      - web-frontend-server2
       - application-backend-server
       - authentication-identity-server
-    ports: ["5173:80"]
+    ports: ["80:80"]
     volumes:
       - ./api-gateway-proxy-server/nginx.conf:/etc/nginx/nginx.conf:ro
     networks:
@@ -131,3 +141,5 @@ services:
     restart: unless-stopped
     dns:
       - 10.10.10.254
+    dns_search:
+      - cloud.local
