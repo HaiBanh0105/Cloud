@@ -2,10 +2,10 @@ from flask import Flask, jsonify, request, Response, render_template
 import time, requests, os, json
 import mysql.connector
 from jose import jwt
-from prometheus_client import generate_latest, CONTENT_TYPE_LATEST, Gauge, Counter
+
 
 # --- Cấu hình OIDC/Keycloak ---
-ISSUER   = os.getenv("OIDC_ISSUER", "http://authentication-identity-server:8080/auth/realms/master")
+ISSUER   = os.getenv("OIDC_ISSUER", "http://authentication-identity-server:8080/realms/master")
 AUDIENCE = os.getenv("OIDC_AUDIENCE", "myapp")
 JWKS_URL = f"{ISSUER}/protocol/openid-connect/certs"
 
@@ -29,18 +29,6 @@ def get_jwks():
 
 app = Flask(__name__)
 
-# --- Prometheus Metrics ---
-REQUEST_COUNT = Counter('app_requests_total', 'Tong so request vao API', ['method', 'endpoint'])
-UP_METRIC = Gauge('web_status', 'Trang thai hoat dong cua App Server (1 la UP)')
-UP_METRIC.set(1) 
-
-@app.before_request
-def before_request():
-    REQUEST_COUNT.labels(method=request.method, endpoint=request.path).inc()
-
-@app.get("/metrics")
-def metrics():
-    return Response(generate_latest(), mimetype=CONTENT_TYPE_LATEST)
 
 @app.get("/hello")
 def hello(): 

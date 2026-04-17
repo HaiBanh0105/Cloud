@@ -46,8 +46,11 @@ services:
         ipv4_address: 10.10.10.20
     ports: ["8085:8081"]
     environment:
-      OIDC_ISSUER: "http://authentication-identity-server:8080/auth/realms/master"
+      OIDC_ISSUER: "http://authentication-identity-server:8080/realms/master"
       OIDC_AUDIENCE: "myapp"
+      # mở rộng
+      # OIDC_ISSUER: "http://host.docker.internal:8081/realms/realm_52300021"
+      # OIDC_AUDIENCE: "myapp"
     extra_hosts:
       - "host.docker.internal:host-gateway"
     deploy:
