@@ -2,17 +2,11 @@ global:
   scrape_interval: 15s
 
 scrape_configs:
-  #Giám sát máy chủ
   - job_name: "node"
     static_configs:
       - targets: ["monitoring-node-exporter-server:9100"]
 
-  # Mở rộng
   - job_name: "web"
+    metrics_path: "/metrics"
     static_configs:
-      - targets: ["web-frontend-server1:80", "web-frontend-server2:80"]
-
-  # 3. Tự giám sát chính Prometheus (Nên có để đủ bộ)
-  - job_name: "prometheus"
-    static_configs:
-      - targets: ["localhost:9090"]
+      - targets: ["application-backend-server:8081"]

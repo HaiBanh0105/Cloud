@@ -3,5 +3,6 @@ WORKDIR /app
 COPY app.py .
 COPY students.json .
 RUN pip install --no-cache-dir flask requests python-jose
+RUN pip install --no-cache-dir flask requests python-jose prometheus_client
 EXPOSE 8081
 CMD ["python","app.py"]
