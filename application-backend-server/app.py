@@ -1,7 +1,7 @@
-from flask import Flask, jsonify, request, Response
+from flask import Flask, jsonify, request
 import time, requests, os, json
 from jose import jwt
-from prometheus_client import generate_latest, CONTENT_TYPE_LATEST, Gauge, Counter
+
 
 # Cấu hình các biến môi trường cho OIDC/Keycloak 
 ISSUER   = os.getenv("OIDC_ISSUER",   "http://authentication-identity-server:8080/realms/master")
@@ -19,22 +19,6 @@ def get_jwks():
 
 app = Flask(__name__)
 
-# Khởi tạo Prometheus Metrics 
-# Counter: Đếm số lượng request vào API
-REQUEST_COUNT = Counter('app_requests_total', 'Tong so request vao API', ['method', 'endpoint'])
-# Gauge: Giám sát trạng thái hoạt động (1 là UP)
-UP_METRIC = Gauge('web_status', 'Trang thai hoat dong cua App Server (1 la UP)')
-UP_METRIC.set(1) 
-
-@app.before_request
-def before_request():
-    # Tăng số đếm request tự động mỗi khi có truy cập [cite: 504]
-    REQUEST_COUNT.labels(method=request.method, endpoint=request.path).inc()
-
-# Endpoint /metrics cho Prometheus Scrape 
-@app.get("/metrics")
-def metrics():
-    return Response(generate_latest(), mimetype=CONTENT_TYPE_LATEST)
 
 @app.get("/hello")
 def hello(): 

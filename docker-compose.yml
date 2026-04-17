@@ -14,7 +14,7 @@ services:
     networks:
       cloud-net:
         ipv4_address: 10.10.10.10
-  
+
   web-frontend-server2:
     build: ./web-frontend-server
     container_name: web-frontend-server2
@@ -32,7 +32,7 @@ services:
         ipv4_address: 10.10.10.20
     ports: ["8085:8081"]
     environment:
-      OIDC_ISSUER:   "http://authentication-identity-server:8080/realms/master"
+      OIDC_ISSUER: "http://authentication-identity-server:8080/realms/master"
       OIDC_AUDIENCE: "myapp"
       # mở rộng
       # OIDC_ISSUER: "http://host.docker.internal:8081/realms/realm_52300021"

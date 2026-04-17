@@ -12,4 +12,11 @@ server {
     index index.html;
     autoindex off;
   }
+
+  # "Giả lập" endpoint metrics để Prometheus không bị 404
+  location /metrics {
+      default_type text/plain;
+      return 200 "nginx_up 1\n";
+      add_header Content-Type text/plain;
+  }
 }
